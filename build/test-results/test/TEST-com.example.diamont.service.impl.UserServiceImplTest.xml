@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.example.diamont.service.impl.UserServiceImplTest" tests="9" skipped="0" failures="0" errors="0" timestamp="2022-04-06T14:00:43" hostname="technocorp-lenovo-xiaoxin-310-15ikb-memoria-ramddr3-1600mhz" time="0.193">
+  <properties/>
+  <testcase name="whenUpdateThenReturnSucess()" classname="com.example.diamont.service.impl.UserServiceImplTest" time="0.137"/>
+  <testcase name="whenCreateThenReturnAnDataIntegrityViolationException()" classname="com.example.diamont.service.impl.UserServiceImplTest" time="0.004"/>
+  <testcase name="deleteWithObjectNotFoundException()" classname="com.example.diamont.service.impl.UserServiceImplTest" time="0.006"/>
+  <testcase name="whenUpdateThenReturnAnDataIntegrityViolationException()" classname="com.example.diamont.service.impl.UserServiceImplTest" time="0.004"/>
+  <testcase name="whenFindByIdThenReturnAnObjectNotFoundException()" classname="com.example.diamont.service.impl.UserServiceImplTest" time="0.006"/>
+  <testcase name="whenFindByIdThenReturnAnUserInstance()" classname="com.example.diamont.service.impl.UserServiceImplTest" time="0.01"/>
+  <testcase name="deleteWithSucess()" classname="com.example.diamont.service.impl.UserServiceImplTest" time="0.007"/>
+  <testcase name="whenCreateThenReturnSucess()" classname="com.example.diamont.service.impl.UserServiceImplTest" time="0.003"/>
+  <testcase name="whenfindAllThenReturnAnListOfUsers()" classname="com.example.diamont.service.impl.UserServiceImplTest" time="0.003"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
