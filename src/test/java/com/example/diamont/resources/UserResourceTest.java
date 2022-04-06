@@ -3,12 +3,10 @@ package com.example.diamont.resources;
 import com.example.diamont.domain.User;
 import com.example.diamont.domain.dto.UserDto;
 import com.example.diamont.service.impl.UserServiceImpl;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
-import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
 import org.modelmapper.ModelMapper;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -55,7 +53,7 @@ class UserResourceTest {
     @Test
     void whenFindByIdThenReturnSucess() {
         when(service.finById(anyInt())).thenReturn(user);
-        when(mapper.map(any(),any())).thenReturn(userDto);
+        when(mapper.map(any(), any())).thenReturn(userDto);
 
         ResponseEntity<UserDto> response = resource.findById(ID);
 
@@ -73,7 +71,7 @@ class UserResourceTest {
     }
 
     @Test
-    void whenFindAllThenReturnListOfUserDto(){
+    void whenFindAllThenReturnListOfUserDto() {
         when(service.findAll()).thenReturn(List.of(user));
         when(mapper.map(any(), any())).thenReturn(userDto);
 
@@ -107,7 +105,22 @@ class UserResourceTest {
     }
 
     @Test
-    void update() {
+    void whenUpdateThenReturnSucess() {
+        when(service.update(userDto)).thenReturn(user);
+        when(mapper.map(any(), any())).thenReturn(userDto);
+
+        ResponseEntity<UserDto> response = resource.update(ID, userDto);
+
+        assertNotNull(response);
+        assertNotNull(response.getBody());
+        assertEquals(HttpStatus.OK, response.getStatusCode());
+        assertEquals(ResponseEntity.class, response.getClass());
+        assertEquals(UserDto.class, response.getBody().getClass());
+
+        assertEquals(ID, response.getBody().getId());
+        assertEquals(NAME, response.getBody().getName());
+        assertEquals(EMAIL, response.getBody().getEmail());
+
     }
 
     @Test
